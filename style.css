@@ -1,0 +1,13 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+.clear {
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+.panel {
+	display: inline-block;
+	width: 33%;
+}

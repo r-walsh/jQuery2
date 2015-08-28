@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
 	<title>Listo</title>
 </head>
 <body>
 
+<form id="new-task-form">
+	<label>New Item</label>
+	<input id="new-item-input" type="text" placeholder="New Task">
+	<button id="save-new-item">Save</button>
+	<button id="cancel">Cancel</button>
+</form>
 
+<div class="new-item-header">
+	<button class='pull-right pencil' id="new-list-item">New</button>
+</div>
+
+<div class="clear"></div>
+
+<div class = "panel" id="new-list">
+	New List
+</div>
+
+<div class="panel">
+	In Progress
+	<ul class="list-group" id="current-list"></ul>
+</div>
+
+<div class="panel">
+	Archived
+	<ul class="list-group" id="archived-list"></ul>
+</div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/app.js" type="text/javascript"></script>
 </body>
 </html>

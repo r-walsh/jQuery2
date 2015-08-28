@@ -3,10 +3,12 @@ $(document).ready(function() {
 $("#new-task-form").hide();
 
 var listo = [];
+var completed = [];
+
 
 function Task(task) {
 	this.task = task;
-	this.id = 'new';
+	this.id = 'new'
 }
 
 function addTask(task) {
@@ -30,6 +32,7 @@ function advanceTask(task) {
 			} else if(listo[i].is === 'inProgress') {
 				listo[i].id = 'archived';
 			} else {
+				completed.push(listo[i]);
 				listo.splice(i, 1);
 			}
 		}
@@ -71,8 +74,13 @@ $(document).on('click', '#in-progress', function(e) {
 	task.id = 'archived';
 	var modified = task.outerHTML.replace('glyphicon-arrow-right', 'glyphicon-remove');
 	advanceTask(task);
-	// $('archived-list').append(modified);
 	$(modified).appendTo($('#archived-list'));
+})
+
+$(document).on('click', '#archived', function(e) {
+	e.preventDefault();
+	var task = this;
+	advanceTask(task);
 })
 
 
